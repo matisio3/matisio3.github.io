@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strona Główna | matisio.eu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #ADD8E6; 
+      color: #333;
+    }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+      z-index: 9999;
+      animation: fadeOut 2s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .navbar {
+      background: rgba(0, 119, 204, 0.85);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #e0f0ff !important;
+    }
+
+    .banner {
+      background: url('img/background.jpg') no-repeat center/cover;
+      height: 320px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .hover-btn {
+      transition: all 0.3s ease;
+    }
+
+    .hover-btn:hover {
+      transform: scale(1.08);
+      background-color: #005fa3;
+      color: white;
+    }
+
+    .logo-card {
+      border: 1px solid #ddd;
+      border-radius: 1rem;
+      padding: 1rem;
+      background-color: rgba(255,255,255,0.8);
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    }
+
+    .logo-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0077cc;
+      font-weight: 600;
+    }
+
+    footer {
+      background-color: #e9ecef;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    footer small {
+      color: #555;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="loader">Ładowanie...</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">matisio.eu</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#osobie">O sobie</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="banner">
+  <div class="banner-content">
+    <h1 class="display-4">matisio.eu</h1>
+    <p class="lead">Cześć! Jestem fanem technologii – miło Cię tu widzieć!</p>
+  </div>
+</header>
+
+<main class="container py-5">
+
+  <section id="osobie" class="mb-5">
+    <div class="glass-card">
+      <h2>O sobie</h2>
+      <p>Cześć! Mam na imię Mateusz, urodziłem się w 2006 roku. Moją największą pasją jest informatyka – szczególnie INF.02, czyli administracja systemami i sieciami komputerowymi, konfiguracja urządzeń sieciowych oraz wszystko związane z infrastrukturą IT. Uwielbiam też podróże – odkrywanie miejsc, poznawanie kultur i łączenie tego z technologią.</p>
+      <a href="#portfolio" class="btn btn-outline-primary hover-btn mt-3">Zobacz moje projekty</a>
+    </div>
+  </section>
+
+  <section id="portfolio" class="mb-5">
+    <div class="glass-card">
+      <h2>Portfolio</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-6 col-md-3 text-center">
+          <a href="https://www.youtube.com/@Matisio">
+            <div class="logo-card">
+              <img src="img/Youtube_logo.png" width="100" alt="YouTube">
+              <p class="mt-2">YouTube</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <a href="https://github.com/matisio3">
+            <div class="logo-card">
+              <img src="img/github.png" width="80" alt="GitHub">
+              <p class="mt-2">GitHub</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <a href="https://github.com/StellarCode-pl">
+            <div class="logo-card">
+              <img src="img/stellarcode.png" width="80" alt="StellarCode">
+              <p class="mt-2">StellarCode</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+          <a href="https://reliveteam.eu">
+            <div class="logo-card">
+              <img src="img/reliveteam.png" width="80" alt="ReliveTeam">
+              <p class="mt-2">ReliveTeam</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="mb-5">
+    <div class="glass-card">
+      <h2>Kontakt</h2>
+      <p><strong>E-mail:</strong> <a href="mailto:matisio@matisio.eu">matisio@matisio.eu</a></p>
+      <p><strong>Discord:</strong> matisio (nie akceptuje nieznanych osób). Jeśli chcesz się skontaktować, dołącz na mój <a href="discord" class="btn btn-sm btn-primary hover-btn ms-2">serwer</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="text-center">
+  <div>
+    <a href='https://www.free-website-hit-counter.com'>
+      <img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=8142&s=5' border='0' alt='Licznik odwiedzin'>
+    </a>
+    <div><small><a href='https://www.free-website-hit-counter.com' style="text-decoration:none;">Credits do licznika</a></small></div>
+  </div>
+  <p class="mt-3 mb-0">Wersja: 1.0 | Poprawiona przez <strong>amad.isio</strong> | Dodawaj propozycje przez maila lub Discorda</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
