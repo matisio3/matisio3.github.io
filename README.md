@@ -3,4 +3,4 @@
 ### Jest dostępna pod adresem: https://matisio.eu 
 
 Credits:
-Amadisio - ulepszenie strony
+amad.isio - ulepszenie strony
