@@ -1,231 +1,77 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Strona Główna | matisio.eu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-  <style>
-    body {
-      font-family: 'Rubik', sans-serif;
-      background-color: #ADD8E6; 
-      color: #333;
-    }
-
-    .loader {
-      position: fixed;
-      inset: 0;
-      background: #222;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 2rem;
-      z-index: 9999;
-      animation: fadeOut 2s forwards;
-    }
-
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-      }
-    }
-
-    .navbar {
-      background: rgba(0, 119, 204, 0.85);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-link {
-      color: white !important;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover {
-      color: #e0f0ff !important;
-    }
-
-    .banner {
-      background: url('img/background.jpg') no-repeat center/cover;
-      height: 320px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
-
-    .banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .banner-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 1rem;
-      padding: 2rem;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .glass-card:hover {
-      transform: scale(1.01);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-    }
-
-    .hover-btn {
-      transition: all 0.3s ease;
-    }
-
-    .hover-btn:hover {
-      transform: scale(1.08);
-      background-color: #005fa3;
-      color: white;
-    }
-
-    .logo-card {
-      border: 1px solid #ddd;
-      border-radius: 1rem;
-      padding: 1rem;
-      background-color: rgba(255,255,255,0.8);
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-    }
-
-    .logo-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #0077cc;
-      font-weight: 600;
-    }
-
-    footer {
-      background-color: #e9ecef;
-      padding: 2rem 0;
-      text-align: center;
-    }
-
-    footer small {
-      color: #555;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Home | matisio.eu</title>
 </head>
 <body>
-
-<div class="loader">Ładowanie...</div>
-
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="/">matisio.eu</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#osobie">O sobie</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
-      </ul>
+<header style="background: #0078d7;">
+    <div class="header-container">
+        <a href="/"><img class="img-logo" src="logo.jpg" width="50" height="50" alt="Logo"></a>
+        <nav id="header-other">
+            <a href="projekty" class="header-text">Projekty</a>
+            <a href="#osobie" class="header-text">O sobie</a>
+            <a href="discord" class="header-text">Discord</a>
+        </nav>
     </div>
-  </div>
-</nav>
-
-<header class="banner">
-  <div class="banner-content">
-    <h1 class="display-4">matisio.eu</h1>
-    <p class="lead">Cześć! Jestem fanem technologii – miło Cię tu widzieć!</p>
-  </div>
 </header>
-
-<main class="container py-5">
-
-  <section id="osobie" class="mb-5">
-    <div class="glass-card">
-      <h2>O sobie</h2>
-      <p>Cześć! Mam na imię Mateusz, urodziłem się w 2006 roku. Moją największą pasją jest informatyka – szczególnie INF.02, czyli administracja systemami i sieciami komputerowymi, konfiguracja urządzeń sieciowych oraz wszystko związane z infrastrukturą IT. Uwielbiam też podróże – odkrywanie miejsc, poznawanie kultur i łączenie tego z technologią.</p>
-      <a href="#portfolio" class="btn btn-outline-primary hover-btn mt-3">Zobacz moje projekty</a>
-    </div>
-  </section>
-
-  <section id="portfolio" class="mb-5">
-    <div class="glass-card">
-      <h2>Portfolio</h2>
-      <div class="row g-4 mt-3">
-        <div class="col-6 col-md-3 text-center">
-          <a href="https://www.youtube.com/@Matisio">
-            <div class="logo-card">
-              <img src="img/Youtube_logo.png" width="100" alt="YouTube">
-              <p class="mt-2">YouTube</p>
+    <section class="banner" style="background: url('img/background.jpeg') center center/cover no-repeat; color: #fff;">
+        <div class="banner-content" style="display:flex; flex-direction:column; align-items:center; padding:32px 0 24px 0; border-radius:0 0 18px 18px;">
+            <h1 class="display-4">matisio.eu</h1>
+            <div class="banner-buttons">
+                <a href="#osobie"><button class="banner-btn">O sobie</button></a>
+                <a href="projekty"><button class="banner-btn">Projekty</button></a>
             </div>
-          </a>
         </div>
-        <div class="col-6 col-md-3 text-center">
-          <a href="https://github.com/matisio3">
-            <div class="logo-card">
-              <img src="img/github.png" width="80" alt="GitHub">
-              <p class="mt-2">GitHub</p>
+    </section>
+    <section class="aktualnosci hover-section">
+        <h2>Aktualności</h2>
+        <h4>Tutaj również się pojawią najnowsze filmiki prezentujące projekt</h4>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/a3ICNMQW7Ok?si=dyoTh7rq3E7_2Z8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p>Narazie nikt nie zrobił filmu o projekcie więc tutaj jest placeholder</p>
+        <div class="news-date"><b>27.05.2025</b> - Nowa wersja strony!</div>
+    </section>
+    <section class="portfolio-section hover-section" style="margin-top:36px; max-width: 900px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 32px 20px 28px 20px; background: linear-gradient(120deg, #f7f7fa 60%, #e3e6f3 100%); margin-left:auto; margin-right:auto;">
+        <h2 style="text-align:center; font-weight:700; color:#262626; letter-spacing:1px; margin-bottom:32px;">Portfolio</h2>
+        <div class="projekty-grid" style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 0;">
+            <div class="projekt-card" style="background:linear-gradient(135deg,#e3e6f3 0%,#f7f7fa 100%); border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px 12px 16px 12px; width:150px; min-height:200px; display:flex; flex-direction:column; align-items:center; transition:box-shadow 0.22s,transform 0.22s; text-align:center; border:1px solid #e0e0e0;">
+                <img src="img/youtube.png" alt="YouTube" style="width:48px;height:48px;object-fit:cover;border-radius:6px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.07);background:#f0f0f0;">
+                <h3 style="color:#0078d7;margin:0 0 6px 0;font-size:1em;font-weight:600;">YouTube</h3>
+                <p style="color:#444;font-size:0.93em;margin:0 0 8px 0;">Kanał głównie z tematyką gamingową (głównie Minecraft).</p>
+                <a href="#" class="header-text" style="color:#0078d7;font-size:0.93em;text-decoration:none;font-weight:600;">Zobacz więcej</a>
             </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3 text-center">
-          <a href="https://github.com/StellarCode-pl">
-            <div class="logo-card">
-              <img src="img/stellarcode.png" width="80" alt="StellarCode">
-              <p class="mt-2">StellarCode</p>
+            <div class="projekt-card" style="background:linear-gradient(135deg,#e3e6f3 0%,#f7f7fa 100%); border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px 12px 16px 12px; width:150px; min-height:200px; display:flex; flex-direction:column; align-items:center; transition:box-shadow 0.22s,transform 0.22s; text-align:center; border:1px solid #e0e0e0;">
+                <img src="img/reliveteam.png" alt="ReliveTeam" style="width:48px;height:48px;object-fit:cover;border-radius:6px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.07);background:#f0f0f0;">
+                <h3 style="color:#0078d7;margin:0 0 6px 0;font-size:1em;font-weight:600;">ReliveTeam</h3>
+                <p style="color:#444;font-size:0.93em;margin:0 0 8px 0;">The Relive Team – To 4 znajomych z Polski starających się przywrócić stary wygląd systemu Windows i nie tylko.</p>
+                <a href="#" class="header-text" style="color:#0078d7;font-size:0.93em;text-decoration:none;font-weight:600;">Zobacz więcej</a>
             </div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3 text-center">
-          <a href="https://reliveteam.eu">
-            <div class="logo-card">
-              <img src="img/reliveteam.png" width="80" alt="ReliveTeam">
-              <p class="mt-2">ReliveTeam</p>
+            <div class="projekt-card" style="background:linear-gradient(135deg,#e3e6f3 0%,#f7f7fa 100%); border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px 12px 16px 12px; width:150px; min-height:200px; display:flex; flex-direction:column; align-items:center; transition:box-shadow 0.22s,transform 0.22s; text-align:center; border:1px solid #e0e0e0;">
+                <img src="img/stellarcode.png" alt="StellarCode" style="width:48px;height:48px;object-fit:cover;border-radius:6px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.07);background:#f0f0f0;">
+                <h3 style="color:#0078d7;margin:0 0 6px 0;font-size:1em;font-weight:600;">StellarCode</h3>
+                <p style="color:#444;font-size:0.93em;margin:0 0 8px 0;">Pluginy do minecraft.</p>
+                <a href="#" class="header-text" style="color:#0078d7;font-size:0.93em;text-decoration:none;font-weight:600;">Zobacz więcej</a>
             </div>
-          </a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt" class="mb-5">
-    <div class="glass-card">
-      <h2>Kontakt</h2>
-      <p><strong>E-mail:</strong> <a href="mailto:matisio@matisio.eu">matisio@matisio.eu</a></p>
-      <p><strong>Discord:</strong> matisio (nie akceptuje nieznanych osób). Jeśli chcesz się skontaktować, dołącz na mój <a href="discord" class="btn btn-sm btn-primary hover-btn ms-2">serwer</a></p>
-    </div>
-  </section>
-
-</main>
-
-<footer class="text-center">
-  <div>
-    <a href='https://x.com/itsmatisio/status/1916199020307091799'>Czemu nie ma licznika?</a>
-    <!-- to se zostawiam na później może użyje może nie xd -->
-    <div><small><a href='#' style="text-decoration:none;"></a></small></div>
-  </div>
-  <p class="mt-3 mb-0">Wersja: 2.0 | Poprawiona przez <strong>amad.isio</strong> | Tworzona i poprawia <strong>Matisio</strong> | Dodawaj propozycje przez maila lub Discorda</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    </section>
+    <section id="osobie" class="hover-section" style="background: linear-gradient(120deg, #e3e6f3 60%, #f7f7fa 100%);">
+        <h2>O sobie</h2>
+        <p>Cześć! Mam na imię Mateusz, urodziłem się w 2006 roku. Moją największą pasją jest informatyka – szczególnie INF.02, czyli administracja systemami i sieciami komputerowymi, konfiguracja urządzeń sieciowych oraz wszystko związane z infrastrukturą IT. Uwielbiam też podróże – odkrywanie miejsc, poznawanie kultur i łączenie tego z technologią.</p>
+    </section>
+    <section class="credits hover-section">
+        <h2>Credits (strona)</h2>
+        <b>amad.isio</b> – za stworzenie Wersji 2.0 strony
+		<br><b>Microsoft</b> - za tapete do Windowsa 7
+		<br><b>u/Icy-Dealer4032 (reddit)</b> - za zmodyfikowanie tapety Windowsa 7, żeby było bez loga Windows
+    </section>
+    <footer>
+        <span>Wersja 3.0 | Strona stworzona przez <b>Matisio</b> | Chcesz pomóc ze stroną? Daj znać na <a href="discord">Discord</a> lub <a href="mailto:kontakt@matisio.eu">kontakt@matisio.eu</a></span>
+    </footer>
 </body>
 </html>
