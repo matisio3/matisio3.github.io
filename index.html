@@ -1,77 +1,30 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <title>Home | matisio.eu</title>
-</head>
-<body>
-<header style="background: #0078d7;">
-    <div class="header-container">
-        <a href="/"><img class="img-logo" src="logo.jpg" width="50" height="50" alt="Logo"></a>
-        <nav id="header-other">
-            <a href="projekty" class="header-text">Projekty</a>
-            <a href="#osobie" class="header-text">O sobie</a>
-            <a href="discord" class="header-text">Discord</a>
-        </nav>
-    </div>
-</header>
-    <section class="banner" style="background: url('img/background.jpeg') center center/cover no-repeat; color: #fff;">
-        <div class="banner-content" style="display:flex; flex-direction:column; align-items:center; padding:32px 0 24px 0; border-radius:0 0 18px 18px;">
-            <h1 class="display-4">matisio.eu</h1>
-            <div class="banner-buttons">
-                <a href="#osobie"><button class="banner-btn">O sobie</button></a>
-                <a href="projekty"><button class="banner-btn">Projekty</button></a>
-            </div>
-        </div>
-    </section>
-    <section class="aktualnosci hover-section">
-        <h2>Aktualności</h2>
-        <h4>Tutaj również się pojawią najnowsze filmiki prezentujące projekt</h4>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/a3ICNMQW7Ok?si=dyoTh7rq3E7_2Z8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <p>Narazie nikt nie zrobił filmu o projekcie więc tutaj jest placeholder</p>
-        <div class="news-date"><b>27.05.2025</b> - Nowa wersja strony!</div>
-    </section>
-    <section class="portfolio-section hover-section" style="margin-top:36px; max-width: 900px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 32px 20px 28px 20px; background: linear-gradient(120deg, #f7f7fa 60%, #e3e6f3 100%); margin-left:auto; margin-right:auto;">
-        <h2 style="text-align:center; font-weight:700; color:#262626; letter-spacing:1px; margin-bottom:32px;">Portfolio</h2>
-        <div class="projekty-grid" style="display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-top: 0;">
-            <div class="projekt-card" style="background:linear-gradient(135deg,#e3e6f3 0%,#f7f7fa 100%); border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px 12px 16px 12px; width:150px; min-height:200px; display:flex; flex-direction:column; align-items:center; transition:box-shadow 0.22s,transform 0.22s; text-align:center; border:1px solid #e0e0e0;">
-                <img src="img/youtube.png" alt="YouTube" style="width:48px;height:48px;object-fit:cover;border-radius:6px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.07);background:#f0f0f0;">
-                <h3 style="color:#0078d7;margin:0 0 6px 0;font-size:1em;font-weight:600;">YouTube</h3>
-                <p style="color:#444;font-size:0.93em;margin:0 0 8px 0;">Kanał głównie z tematyką gamingową (głównie Minecraft).</p>
-                <a href="#" class="header-text" style="color:#0078d7;font-size:0.93em;text-decoration:none;font-weight:600;">Zobacz więcej</a>
-            </div>
-            <div class="projekt-card" style="background:linear-gradient(135deg,#e3e6f3 0%,#f7f7fa 100%); border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px 12px 16px 12px; width:150px; min-height:200px; display:flex; flex-direction:column; align-items:center; transition:box-shadow 0.22s,transform 0.22s; text-align:center; border:1px solid #e0e0e0;">
-                <img src="img/reliveteam.png" alt="ReliveTeam" style="width:48px;height:48px;object-fit:cover;border-radius:6px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.07);background:#f0f0f0;">
-                <h3 style="color:#0078d7;margin:0 0 6px 0;font-size:1em;font-weight:600;">ReliveTeam</h3>
-                <p style="color:#444;font-size:0.93em;margin:0 0 8px 0;">The Relive Team – To 4 znajomych z Polski starających się przywrócić stary wygląd systemu Windows i nie tylko.</p>
-                <a href="#" class="header-text" style="color:#0078d7;font-size:0.93em;text-decoration:none;font-weight:600;">Zobacz więcej</a>
-            </div>
-            <div class="projekt-card" style="background:linear-gradient(135deg,#e3e6f3 0%,#f7f7fa 100%); border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.05); padding:20px 12px 16px 12px; width:150px; min-height:200px; display:flex; flex-direction:column; align-items:center; transition:box-shadow 0.22s,transform 0.22s; text-align:center; border:1px solid #e0e0e0;">
-                <img src="img/stellarcode.png" alt="StellarCode" style="width:48px;height:48px;object-fit:cover;border-radius:6px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.07);background:#f0f0f0;">
-                <h3 style="color:#0078d7;margin:0 0 6px 0;font-size:1em;font-weight:600;">StellarCode</h3>
-                <p style="color:#444;font-size:0.93em;margin:0 0 8px 0;">Pluginy do minecraft.</p>
-                <a href="#" class="header-text" style="color:#0078d7;font-size:0.93em;text-decoration:none;font-weight:600;">Zobacz więcej</a>
-            </div>
-        </div>
-    </section>
-    <section id="osobie" class="hover-section" style="background: linear-gradient(120deg, #e3e6f3 60%, #f7f7fa 100%);">
-        <h2>O sobie</h2>
-        <p>Cześć! Mam na imię Mateusz, urodziłem się w 2006 roku. Moją największą pasją jest informatyka – szczególnie INF.02, czyli administracja systemami i sieciami komputerowymi, konfiguracja urządzeń sieciowych oraz wszystko związane z infrastrukturą IT. Uwielbiam też podróże – odkrywanie miejsc, poznawanie kultur i łączenie tego z technologią.</p>
-    </section>
-    <section class="credits hover-section">
-        <h2>Credits (strona)</h2>
-        <b>amad.isio</b> – za stworzenie Wersji 2.0 strony
-		<br><b>Microsoft</b> - za tapete do Windowsa 7
-		<br><b>u/Icy-Dealer4032 (reddit)</b> - za zmodyfikowanie tapety Windowsa 7, żeby było bez loga Windows
-    </section>
-    <footer>
-        <span>Wersja 3.0 | Strona stworzona przez <b>Matisio</b> | Chcesz pomóc ze stroną? Daj znać na <a href="discord">Discord</a> lub <a href="mailto:kontakt@matisio.eu">kontakt@matisio.eu</a></span>
-    </footer>
-</body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Strona w budowie - matisio.eu</title>
+        <style>
+            body {
+                background-color: black;
+            }
+
+            a {
+                color: white;
+                font-size: 50px;
+                font-weight: bold;
+            }
+
+            i {
+                color: white;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="strona.jpg">
+        <br><a>Rzeczy z Projekty Matisia znajdziesz <a href="https://remorateam.is-a.dev">tutaj</a></a>
+        <br><i>W dużym skrócie matisio.eu będzie miało tylko portfolio matisia</i>
+        <br><a>Link do discorda - </a><a href="discord">kliknij tutaj</a>
+        <br><a>Link do X - </a><a href="https://x.com/itsmatisio">kliknij tutaj</a>
+        <br><i>Tutaj będą update np. dotyczące strony</i>
+    </body>
 </html>
