@@ -1,30 +1,105 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Strona w budowie - matisio.eu</title>
-        <style>
-            body {
-                background-color: black;
-            }
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>matisio.eu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="background">
+    <nav style="--bs-bg-opacity: .8;" class="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img style="border-radius:10px;margin-right:10px;" src="profilowe.png" width="30"> matisio.eu</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gdzie można mnie znaleźć
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://remorateam.is-a.dev/">Remora Team</a></li>
+                <li><a class="dropdown-item" href="https://reliveteam.eu/">ReliveTeam</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://klovy.org/">Klovy Chat</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://github.com/StellarCode-pl">StellarCode</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kontakt">Kontakt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://x.com/itsmatisio">X/Twitter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="discord">Discord</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <div class="container my-5 background-stuff">
+        <h1 data-aos="fade-down" data-aos-duration="1000">Matisio's Personal Website</h1>
+        <div class="col-lg-8 px-0">
+          <p class="fs-5" data-aos="fade-up" data-aos-duration="1000">Witaj na mojej stronie! W internecie jestem znany jako Matisio,<br>interesuje się informatyką głównie hardwarem</p>
 
-            a {
-                color: white;
-                font-size: 50px;
-                font-weight: bold;
-            }
+          <hr class="col-1 my-4" data-aos="fade-right" data-aos-duration="1500">
 
-            i {
-                color: white;
-                font-size: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <img src="strona.jpg">
-        <br><a>Rzeczy z Projekty Matisia znajdziesz <a href="https://remorateam.is-a.dev">tutaj</a></a>
-        <br><i>W dużym skrócie matisio.eu będzie miało tylko portfolio matisia</i>
-        <br><a>Link do discorda - </a><a href="discord">kliknij tutaj</a>
-        <br><a>Link do X - </a><a href="https://x.com/itsmatisio">kliknij tutaj</a>
-        <br><i>Tutaj będą update np. dotyczące strony</i>
-    </body>
+          <a href="portfolio" class="btn btn-primary" data-aos="fade-up-right" data-aos-duration="1000">Portfolio</a>
+          <a href="discord" class="btn btn-secondary" data-aos="fade-up-left" data-aos-duration="1000">Discord</a>
+        </div>
+      </div>
+    </div>
+    <div class="warning">
+      <p style="width:500px;padding:10px;border-radius:20px;text-align:center;" class="bg-danger bg-gradient" data-aos="flip-up" data-aos-duration="1000">UWAGA! Wszystkie projekty matisia zostały przeniesione <a href="https://remorateam.is-a.dev">tutaj</a></p>
+    </div>
+    <div style="margin-left:20px;">
+      <h1 style="font-size:50px;font-weight:bold;margin-top:10px;" data-aos="zoom-out-left" data-aos-duration="1000">Portfolio</h1>
+      <div data-aos="fade-down" data-aos-duration="1000">
+        <div style="font-size: 20px;display:flex;">
+          <a href="https://xvziuu.ovh">
+            <figure style="padding-right:20px;">
+              <img src="https://xvziuu.ovh/xvziuu.png" width="300" alt="xvziuu.ovh"/>
+              <figcaption style="margin-left:100px;">xvziuu.ovh</figcaption></a>
+            </figure>
+          <a href="#">
+            <figure>
+              <img style="border-radius:500px;" src="profilowe.png" width="300" alt="ta strona"/>
+              <figcaption style="margin-left:100px;">ta strona</figcaption>
+            </figure>
+          </a>
+        </div>
+        <i style="clear:both;font-size:20px;">Po więcej rzeczy zapraszam na dział <b>"gdzie można mnie znaleźć"</b></i>
+        <p style="font-size:20px;">Jeżeli chciałbyś swoją strone to zapraszam na dział <a href="kontakt">Kontakt</a></p>
+      </div>
+    </div>
+    <div style="margin-left:20px;">
+      <div data-aos="fade-down" data-aos-duration="1000">
+        <h1 style="font-size:50px;font-weight:bold;margin-top:10px;" data-aos="zoom-out-left" data-aos-duration="1000">Credits</h1>
+        <li>Korpy za pomysł z nav</li>
+        <li>Kosmo za tło</li>
+        <li>Bootstrap za bootstrap</li>
+        <li>Obraz <a href="https://pixabay.com/pl/users/leonhard_niederwimmer-1131094/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7146080"> Leonhard Niederwimmer</a> z <a href="https://pixabay.com/pl//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7146080"> Pixabay</a></li>
+        <p>Chcesz coś zasugerować? Zapraszam do działu <a href="kontakt">Kontakt</a></p>
+      </div>
+    </div>
+    <div class="footer">
+      Created by <u>Matisio</u> | Wersja 4.0
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
