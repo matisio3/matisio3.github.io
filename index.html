@@ -1,105 +1,353 @@
-<html lang="pl">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>matisio.eu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background: url('aurora-3273419_1920.jpg')
+        }
+
+        .margin {
+          position: relative;
+          top: -100px;
+          left: 128px;
+        }
+
+        .footer {
+          color: white;
+          background-color: rgba(0, 0, 0, 0.3);
+          font-family: Arial, Helvetica, sans-serif;
+          height: 50px;
+          margin-top: 50px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
   </head>
   <body>
-    <div class="background">
-    <nav style="--bs-bg-opacity: .8;" class="navbar navbar-expand-lg navbar-dark bg-primary bg-gradient">
-      <div class="container">
-        <a class="navbar-brand" href="/"><img style="border-radius:10px;margin-right:10px;" src="profilowe.png" width="30"> matisio.eu</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Gdzie można mnie znaleźć
+    <div style="margin:25px;">
+      <div class="background">
+        <div class="window glass active" style="max-width: 50%; --w7-w-bg: #2718f7;">
+          <div class="title-bar">
+            <div class="title-bar-text">O mnie</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Restore"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <ul role="menubar" class="can-hover">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          File
+          <ul role="menu">
+            <li role="menuitem">
+              <a href="#menubar">
+                Open <span>Ctrl+O</span>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="https://remorateam.is-a.dev/">Remora Team</a></li>
-                <li><a class="dropdown-item" href="https://reliveteam.eu/">ReliveTeam</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="https://klovy.org/">Klovy Chat</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="https://github.com/StellarCode-pl">StellarCode</a></li>
+            </li>
+            <li role="menuitem">
+              <a href="#menubar">
+                Save <span>Ctrl+S</span>
+              </a>
+            </li>
+            <li role="menuitem" class="has-divider">
+              <a href="#menubar">
+                Save As... <span>Ctrl+Shift+S</span>
+              </a>
+            </li>
+            <li role="menuitem"><a href="#menubar">Exit</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Edit
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">Undo</a></li>
+            <li role="menuitem"><a href="#menubar">Copy</a></li>
+            <li role="menuitem"><a href="#menubar">Cut</a></li>
+            <li role="menuitem" class="has-divider"><a href="#menubar">Paste</a></li>
+            <li role="menuitem"><a href="#menubar">Delete</a></li>
+            <li role="menuitem"><a href="#menubar">Find...</a></li>
+            <li role="menuitem"><a href="#menubar">Replace...</a></li>
+            <li role="menuitem"><a href="#menubar">Go to...</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          View
+          <ul role="menu">
+            <li role="menuitem" tabindex="0" aria-haspopup="true">
+              Zoom
+              <ul role="menu">
+                <li role="menuitem"><button>Zoom In</button></li>
+                <li role="menuitem"><button>Zoom Out</button></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="kontakt">Kontakt</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://x.com/itsmatisio">X/Twitter</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="discord">Discord</a>
-            </li>
+            <li role="menuitem"><a href="#menubar">Status Bar</a></li>
           </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Help
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">View Help</a></li>
+            <li role="menuitem"><a href="#menubar">About</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div style="margin:25px;">
+        <img src="Nowy projekt.png" width="128"><a style="color:#2718f7;position:relative;top:-100px;font-size:20px;text-decoration:none;">Matisio</a>
+        <p class="margin">Cześć, nazywam się Mateusz, mam 19 lat, interesuje się informatyką<br> (głównie hardware, ale tez trochę software).</p>
+      </div>
+          </div>
         </div>
       </div>
-    </nav>
-      <div class="container my-5 background-stuff">
-        <h1 data-aos="fade-down" data-aos-duration="1000">Matisio's Personal Website</h1>
-        <div class="col-lg-8 px-0">
-          <p class="fs-5" data-aos="fade-up" data-aos-duration="1000">Witaj na mojej stronie! W internecie jestem znany jako Matisio,<br>interesuje się informatyką głównie hardwarem</p>
+    </div>
 
-          <hr class="col-1 my-4" data-aos="fade-right" data-aos-duration="1500">
+    <div style="margin:25px;margin-left:55%;margin-top:-330px;">
+      <div class="background">
+        <div class="window glass active" style="max-width: 100%; --w7-w-bg: #2718f7;">
+          <div class="title-bar">
+            <div class="title-bar-text">Projekty</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Restore"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <ul role="menubar" class="can-hover">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          File
+          <ul role="menu">
+            <li role="menuitem">
+              <a href="#menubar">
+                Open <span>Ctrl+O</span>
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="#menubar">
+                Save <span>Ctrl+S</span>
+              </a>
+            </li>
+            <li role="menuitem" class="has-divider">
+              <a href="#menubar">
+                Save As... <span>Ctrl+Shift+S</span>
+              </a>
+            </li>
+            <li role="menuitem"><a href="#menubar">Exit</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Edit
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">Undo</a></li>
+            <li role="menuitem"><a href="#menubar">Copy</a></li>
+            <li role="menuitem"><a href="#menubar">Cut</a></li>
+            <li role="menuitem" class="has-divider"><a href="#menubar">Paste</a></li>
+            <li role="menuitem"><a href="#menubar">Delete</a></li>
+            <li role="menuitem"><a href="#menubar">Find...</a></li>
+            <li role="menuitem"><a href="#menubar">Replace...</a></li>
+            <li role="menuitem"><a href="#menubar">Go to...</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          View
+          <ul role="menu">
+            <li role="menuitem" tabindex="0" aria-haspopup="true">
+              Zoom
+              <ul role="menu">
+                <li role="menuitem"><button>Zoom In</button></li>
+                <li role="menuitem"><button>Zoom Out</button></li>
+              </ul>
+            </li>
+            <li role="menuitem"><a href="#menubar">Status Bar</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Help
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">View Help</a></li>
+            <li role="menuitem"><a href="#menubar">About</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div style="margin:25px;">
+        <h3>Projekty, w których jestem:</h3>
+        <ul>
+          <li><a href="https://reliveteam.eu">ReliveTeam</a></li>
+          <li><a href="https://remorateam.is-a.dev">Remora Team</a></li>
+          <li><a href="https://klovy.org">Klovy Chat</a></li>
+          <li><a href="https://github.com/StellarCode-pl">StellarCode</a></li>
+        </ul>
+      </div>
+          </div>
 
-          <a href="portfolio" class="btn btn-primary" data-aos="fade-up-right" data-aos-duration="1000">Portfolio</a>
-          <a href="discord" class="btn btn-secondary" data-aos="fade-up-left" data-aos-duration="1000">Discord</a>
         </div>
       </div>
     </div>
-    <div class="warning">
-      <p style="width:500px;padding:10px;border-radius:20px;text-align:center;" class="bg-danger bg-gradient" data-aos="flip-up" data-aos-duration="1000">UWAGA! Wszystkie projekty matisia zostały przeniesione <a href="https://remorateam.is-a.dev">tutaj</a></p>
-    </div>
-    <div style="margin-left:20px;">
-      <h1 style="font-size:50px;font-weight:bold;margin-top:10px;" data-aos="zoom-out-left" data-aos-duration="1000">Portfolio</h1>
-      <div data-aos="fade-down" data-aos-duration="1000">
-        <div style="font-size: 20px;display:flex;">
-          <a href="https://xvziuu.ovh">
-            <figure style="padding-right:20px;">
-              <img src="https://xvziuu.ovh/xvziuu.png" width="300" alt="xvziuu.ovh"/>
-              <figcaption style="margin-left:100px;">xvziuu.ovh</figcaption></a>
-            </figure>
-          <a href="#">
-            <figure>
-              <img style="border-radius:500px;" src="profilowe.png" width="300" alt="ta strona"/>
-              <figcaption style="margin-left:100px;">ta strona</figcaption>
-            </figure>
-          </a>
+
+    <div style="margin:25px;margin-left:55%;margin-top:30px;">
+      <div class="background">
+        <div class="window glass active" style="max-width: 100%; --w7-w-bg: #2718f7;">
+          <div class="title-bar">
+            <div class="title-bar-text">Social Media</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Restore"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <ul role="menubar" class="can-hover">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          File
+          <ul role="menu">
+            <li role="menuitem">
+              <a href="#menubar">
+                Open <span>Ctrl+O</span>
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="#menubar">
+                Save <span>Ctrl+S</span>
+              </a>
+            </li>
+            <li role="menuitem" class="has-divider">
+              <a href="#menubar">
+                Save As... <span>Ctrl+Shift+S</span>
+              </a>
+            </li>
+            <li role="menuitem"><a href="#menubar">Exit</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Edit
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">Undo</a></li>
+            <li role="menuitem"><a href="#menubar">Copy</a></li>
+            <li role="menuitem"><a href="#menubar">Cut</a></li>
+            <li role="menuitem" class="has-divider"><a href="#menubar">Paste</a></li>
+            <li role="menuitem"><a href="#menubar">Delete</a></li>
+            <li role="menuitem"><a href="#menubar">Find...</a></li>
+            <li role="menuitem"><a href="#menubar">Replace...</a></li>
+            <li role="menuitem"><a href="#menubar">Go to...</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          View
+          <ul role="menu">
+            <li role="menuitem" tabindex="0" aria-haspopup="true">
+              Zoom
+              <ul role="menu">
+                <li role="menuitem"><button>Zoom In</button></li>
+                <li role="menuitem"><button>Zoom Out</button></li>
+              </ul>
+            </li>
+            <li role="menuitem"><a href="#menubar">Status Bar</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Help
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">View Help</a></li>
+            <li role="menuitem"><a href="#menubar">About</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div style="margin:25px;">
+        <h3>Moje Social Media:</h3>
+        <ul>
+          <li><a href="https://youtube.com/@Matisio">YouTube</a></li>
+          <li><a href="discord">Discord</a></li>
+          <li><a href="https://x.com/itsmatisio">X/Twitter</a></li>
+        </ul>
+        <p>Możesz również napisać do mnie maila <a href="mailto:itsmatisio@outlook.fr">itsmatisio@outlook.fr</a> <br>(możliwe, że wkrótce zmienię maila)</a></p>
+      </div>
+          </div>
+
         </div>
-        <i style="clear:both;font-size:20px;">Po więcej rzeczy zapraszam na dział <b>"gdzie można mnie znaleźć"</b></i>
-        <p style="font-size:20px;">Jeżeli chciałbyś swoją strone to zapraszam na dział <a href="kontakt">Kontakt</a></p>
       </div>
     </div>
-    <div style="margin-left:20px;">
-      <div data-aos="fade-down" data-aos-duration="1000">
-        <h1 style="font-size:50px;font-weight:bold;margin-top:10px;" data-aos="zoom-out-left" data-aos-duration="1000">Credits</h1>
-        <li>Korpy za pomysł z nav</li>
-        <li>Kosmo za tło</li>
-        <li>Bootstrap za bootstrap</li>
-        <li>Obraz <a href="https://pixabay.com/pl/users/leonhard_niederwimmer-1131094/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7146080"> Leonhard Niederwimmer</a> z <a href="https://pixabay.com/pl//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7146080"> Pixabay</a></li>
-        <p>Chcesz coś zasugerować? Zapraszam do działu <a href="kontakt">Kontakt</a></p>
+    <div style="margin:25px;margin-top:-80px;">
+      <div class="background">
+        <div class="window glass active" style="max-width: 50%; --w7-w-bg: #2718f7;">
+          <div class="title-bar">
+            <div class="title-bar-text">Moje projekty</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Restore"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body has-space">
+            <ul role="menubar" class="can-hover">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          File
+          <ul role="menu">
+            <li role="menuitem">
+              <a href="#menubar">
+                Open <span>Ctrl+O</span>
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="#menubar">
+                Save <span>Ctrl+S</span>
+              </a>
+            </li>
+            <li role="menuitem" class="has-divider">
+              <a href="#menubar">
+                Save As... <span>Ctrl+Shift+S</span>
+              </a>
+            </li>
+            <li role="menuitem"><a href="#menubar">Exit</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Edit
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">Undo</a></li>
+            <li role="menuitem"><a href="#menubar">Copy</a></li>
+            <li role="menuitem"><a href="#menubar">Cut</a></li>
+            <li role="menuitem" class="has-divider"><a href="#menubar">Paste</a></li>
+            <li role="menuitem"><a href="#menubar">Delete</a></li>
+            <li role="menuitem"><a href="#menubar">Find...</a></li>
+            <li role="menuitem"><a href="#menubar">Replace...</a></li>
+            <li role="menuitem"><a href="#menubar">Go to...</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          View
+          <ul role="menu">
+            <li role="menuitem" tabindex="0" aria-haspopup="true">
+              Zoom
+              <ul role="menu">
+                <li role="menuitem"><button>Zoom In</button></li>
+                <li role="menuitem"><button>Zoom Out</button></li>
+              </ul>
+            </li>
+            <li role="menuitem"><a href="#menubar">Status Bar</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Help
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">View Help</a></li>
+            <li role="menuitem"><a href="#menubar">About</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div style="margin:25px;">
+        <h1>Czytaj więcej <a href="info">Tutaj</a></h1>
+      </div>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="footer">
-      Created by <u>Matisio</u> | Wersja 4.0
+      <div style="position:relative;top:15px;text-align:center;">
+        Made by <u>Matisio</u> | <a href="credits">Credits</a>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
   </body>
 </html>
