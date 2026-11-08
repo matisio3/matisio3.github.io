@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wyzwanie GTA | Sirmatisio</title>
+  <style>
+    :root {
+      --bg-color: #080c14;
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --accent-color: #00d2ff;
+      --accent-glow: rgba(0, 210, 255, 0.4);
+      --danger-color: #ff4655;
+      --danger-glow: rgba(255, 70, 85, 0.4);
+      --tipply-color: #22c55e;
+      --tipply-glow: rgba(34, 197, 94, 0.4);
+      --text-color: #ffffff;
+      --sub-text: #94a3b8;
+      --border-color: rgba(0, 210, 255, 0.25);
+      --yt-color: #ff0000;
+      --twitch-color: #9146ff;
+      --completed-color: #22c55e;
+      --completed-glow: rgba(34, 197, 94, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 50% 15%, rgba(0, 210, 255, 0.1) 0%, transparent 55%),
+        linear-gradient(to bottom, #080c14, #030508);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px 15px 50px 15px;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* Sekcja Nagłówka i Wyzwania */
+    .header-box {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .header-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-color);
+      text-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+    }
+
+    .header-title span {
+      color: var(--accent-color);
+    }
+
+    .challenge-badge {
+      background: rgba(0, 210, 255, 0.1);
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    .challenge-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .challenge-deadline {
+      color: var(--sub-text);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .challenge-deadline strong {
+      color: #fff;
+    }
+
+    .highlight-gta6 {
+      color: var(--accent-color);
+      font-weight: 800;
+    }
+
+    /* Odtwarzacz Iframe z Przełącznikiem Zakładek */
+    .stream-player-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .stream-tabs {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--sub-text);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .tab-btn.active-twitch {
+      background: rgba(145, 70, 255, 0.2);
+      border-color: var(--twitch-color);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(145, 70, 255, 0.4);
+    }
+
+    .tab-btn.active-yt {
+      background: rgba(255, 0, 0, 0.2);
+      border-color: var(--yt-color);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
+    }
+
+    .video-container {
+      width: 100%;
+      position: relative;
+      padding-bottom: 56.25%; /* Proporcje 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px var(--border-color);
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .tab-content {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Sekcja Akcji / Linków */
+    .actions-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    /* Przycisk Donate / Tipply */
+    .btn-donate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #ffffff;
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      box-shadow: 0 4px 20px var(--tipply-glow);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-donate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(34, 197, 94, 0.6);
+    }
+
+    /* Przyciski Mediów / Linki */
+    .social-links {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .social-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-youtube {
+      background: var(--yt-color);
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .btn-youtube:hover {
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+    }
+
+    .btn-twitch {
+      background: var(--twitch-color);
+      box-shadow: 0 4px 15px rgba(145, 70, 255, 0.3);
+    }
+
+    .btn-twitch:hover {
+      box-shadow: 0 6px 20px rgba(145, 70, 255, 0.5);
+    }
+
+    /* Nagłówki sekcji */
+    .section-subtitle {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-color);
+      margin-top: 10px;
+      align-self: flex-start;
+    }
+
+    .section-subtitle.danger {
+      color: var(--danger-color);
+    }
+
+    /* Sekcja Postępu Gier */
+    .progress-box {
+      width: 100%;
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+    }
+
+    .progress-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .progress-item.completed {
+      border-color: rgba(34, 197, 94, 0.4);
+      background: rgba(34, 197, 94, 0.08);
+    }
+
+    .progress-item.completed .game-title {
+      color: #e2e8f0;
+      text-decoration: line-through;
+      opacity: 0.8;
+    }
+
+    .progress-item.completed .game-status {
+      color: var(--completed-color);
+      font-weight: 800;
+      text-shadow: 0 0 8px var(--completed-glow);
+    }
+
+    .progress-item.active {
+      border-color: var(--accent-color);
+      background: rgba(0, 210, 255, 0.12);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+    }
+
+    .progress-item.active .game-title {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .progress-item.active .game-status {
+      color: var(--accent-color);
+      font-weight: 800;
+      text-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .game-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .game-status {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--sub-text);
+    }
+
+    /* Listy (Cele i Kary) */
+    .items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .list-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 22px;
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .list-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-color);
+      box-shadow: 0 8px 30px rgba(0, 210, 255, 0.2);
+    }
+
+    /* Karta Kary (Czerwony akcent) */
+    .list-card.punishment-card {
+      border-color: rgba(255, 70, 85, 0.3);
+    }
+
+    .list-card.punishment-card:hover {
+      border-color: var(--danger-color);
+      box-shadow: 0 8px 30px rgba(255, 70, 85, 0.25);
+    }
+
+    .amount {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--accent-color);
+      text-shadow: 0 0 10px var(--accent-glow);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      margin-right: 18px;
+    }
+
+    .amount.danger-amount {
+      color: var(--danger-color);
+      text-shadow: 0 0 10px var(--danger-glow);
+    }
+
+    .action {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-color);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: right;
+      line-height: 1.3;
+    }
+
+    .footer-hint {
+      font-size: 0.85rem;
+      color: var(--sub-text);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    <!-- Header z wyzwaniem -->
+    <div class="header-box">
+      <div class="header-title">Wyzwanie <span>GTA</span></div>
+      <div class="challenge-badge">Seria GTA III ➔ GTA VI</div>
+      <div class="challenge-details">
+        <div class="challenge-deadline">Przejście GTA III – GTA V: <strong>do 19 listopada</strong></div>
+        <div class="challenge-deadline">Premiera <span class="highlight-gta6">GTA VI</span>: <strong>19 listopada!</strong></div>
+      </div>
+    </div>
+
+    <!-- Odtwarzacze Streamów z Zakładkami (Tabs) -->
+    <div class="stream-player-box">
+      <div class="stream-tabs">
+        <button class="tab-btn active-twitch" onclick="switchStream('twitch')">
+          <span>👾 Twitch Stream</span>
+        </button>
+        <button class="tab-btn" id="yt-tab-btn" onclick="switchStream('youtube')">
+          <span>▶ YouTube Live</span>
+        </button>
+      </div>
+
+      <div class="video-container">
+        <!-- Odtwarzacz Twitch -->
+        <div id="twitch-stream" class="tab-content active">
+          <iframe 
+            src="https://player.twitch.tv/?channel=sirmatisio&parent=matisio.pl&autoplay=false" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Odtwarzacz YouTube -->
+        <div id="youtube-stream" class="tab-content">
+          <iframe 
+            src="https://www.youtube.com/embed/live_stream?channel=UC06g1vHrHC7i29Nnvj9TOxA&autoplay=1" 
+            title="Transmisja na żywo YouTube" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sekcja Przycisków (Tipply + Sociale) -->
+    <div class="actions-box">
+      <a href="https://tipply.pl/@itsmatisio" target="_blank" class="btn-donate">
+        💳 Wyślij Donate / Utrudnij Grę
+      </a>
+
+      <div class="social-links">
+        <a href="https://www.youtube.com/@sirmatisio/live" target="_blank" class="social-btn btn-youtube">
+          YouTube Live
+        </a>
+        <a href="https://www.twitch.tv/sirmatisio" target="_blank" class="social-btn btn-twitch">
+          Twitch Stream
+        </a>
+      </div>
+    </div>
+
+    <!-- Obecny Postęp -->
+    <div class="section-subtitle">Obecny Postęp</div>
+    <div class="progress-box">
+      <div class="progress-item completed">
+        <span class="game-title">GTA III</span>
+        <span class="game-status">✓ Ukończone</span>
+      </div>
+      <div class="progress-item active">
+        <span class="game-title">GTA Vice City</span>
+        <span class="game-status">▶ TERAZ NA STREAMIE</span>
+      </div>
+      <div class="progress-item">
+        <span class="game-title">GTA San Andreas</span>
+        <span class="game-status">W kolejce</span>
+      </div>
+      <div class="progress-item">
+        <span class="game-title">GTA IV</span>
+        <span class="game-status">W kolejce</span>
+      </div>
+      <div class="progress-item">
+        <span class="game-title">GTA V</span>
+        <span class="game-status">W kolejce</span>
+      </div>
+      <div class="progress-item">
+        <span class="game-title">GTA VI</span>
+        <span class="game-status">19 Listopada</span>
+      </div>
+    </div>
+
+    <!-- Utrudnienia dla Widzów -->
+    <div class="section-subtitle danger">Chcesz utrudnić? Oto jak możesz!</div>
+    <div class="items-list">
+      <div class="list-card punishment-card">
+        <span class="amount danger-amount">5 zł</span>
+        <span class="action">Restart Checkpointa</span>
+      </div>
+      <div class="list-card punishment-card">
+        <span class="amount danger-amount">10 zł</span>
+        <span class="action">Restart Misji</span>
+      </div>
+      <div class="list-card punishment-card">
+        <span class="amount danger-amount">50 zł</span>
+        <span class="action">Cała gra od nowa</span>
+      </div>
+    </div>
+
+    <!-- Cele Streama -->
+    <div class="section-subtitle">Cele Streama</div>
+    <div class="items-list">
+      <div class="list-card">
+        <span class="amount">40 zł</span>
+        <span class="action">Xbox Game Pass (najtańszy)</span>
+      </div>
+      <div class="list-card">
+        <span class="amount">50 zł</span>
+        <span class="action">GTA V na PS4</span>
+      </div>
+      <div class="list-card">
+        <span class="amount">90 zł</span>
+        <span class="action">GTA V na PS4 + XGP</span>
+      </div>
+      <div class="list-card">
+        <span class="amount">100 zł</span>
+        <span class="action">GTA V na Xboxie Series X</span>
+      </div>
+      <div class="list-card">
+        <span class="amount">130 zł</span>
+        <span class="action">GTA V na Steamie</span>
+      </div>
+      <div class="list-card">
+        <span class="amount">140 zł</span>
+        <span class="action">GTA V na Xboxie Series X + XGP</span>
+      </div>
+      <div class="list-card">
+        <span class="amount">300 zł</span>
+        <span class="action">Wszystko co było wymienione</span>
+      </div>
+    </div>
+
+    <div class="footer-hint">Wspieraj kanał i wpływaj na rozgrywkę!</div>
+  </div>
+
+  <script>
+    // Przełączanie odtwarzaczy wideo Twitch / YouTube
+    function switchStream(platform) {
+      const twitchStream = document.getElementById('twitch-stream');
+      const youtubeStream = document.getElementById('youtube-stream');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      buttons.forEach(btn => btn.className = 'tab-btn');
+
+      if (platform === 'twitch') {
+        twitchStream.classList.add('active');
+        youtubeStream.classList.remove('active');
+        buttons[0].classList.add('active-twitch');
+      } else {
+        youtubeStream.classList.add('active');
+        twitchStream.classList.remove('active');
+        buttons[1].classList.add('active-yt');
+      }
+    }
+  </script>
+
+</body>
+</html>
