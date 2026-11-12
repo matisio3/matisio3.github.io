@@ -113,55 +113,26 @@
       font-weight: 800;
     }
 
-    /* Odtwarzacz Iframe z Przełącznikiem Zakładek */
+    .stream-notice {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--twitch-color);
+      border-radius: 12px;
+      background: rgba(145, 70, 255, 0.14);
+      color: #fff;
+      text-align: center;
+      line-height: 1.5;
+      box-shadow: 0 0 16px rgba(145, 70, 255, 0.2);
+    }
+
+    .stream-notice a {
+      color: #c4a3ff;
+      font-weight: 800;
+    }
+
+    /* Odtwarzacz Twitch */
     .stream-player-box {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .stream-tabs {
-      display: flex;
-      gap: 10px;
-      width: 100%;
-    }
-
-    .tab-btn {
-      flex: 1;
-      padding: 10px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      color: var(--sub-text);
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: all 0.2s ease;
-    }
-
-    .tab-btn:hover {
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.4);
-    }
-
-    .tab-btn.active-twitch {
-      background: rgba(145, 70, 255, 0.2);
-      border-color: var(--twitch-color);
-      color: #fff;
-      box-shadow: 0 0 12px rgba(145, 70, 255, 0.4);
-    }
-
-    .tab-btn.active-yt {
-      background: rgba(255, 0, 0, 0.2);
-      border-color: var(--yt-color);
-      color: #fff;
-      box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
     }
 
     .video-container {
@@ -183,16 +154,6 @@
       width: 100%;
       height: 100%;
       border: 0;
-    }
-
-    .tab-content {
-      display: none;
-      width: 100%;
-      height: 100%;
-    }
-
-    .tab-content.active {
-      display: block;
     }
 
     /* Sekcja Akcji / Linków */
@@ -276,15 +237,6 @@
 
     .social-btn:hover {
       transform: translateY(-2px);
-    }
-
-    .btn-youtube {
-      background: var(--yt-color);
-      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-    }
-
-    .btn-youtube:hover {
-      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
     }
 
     .btn-twitch {
@@ -466,54 +418,35 @@
       </div>
     </div>
 
-    <!-- Odtwarzacze Streamów z Zakładkami (Tabs) -->
+    <div class="stream-notice">
+      Przez około 3 dni streamy będą dostępne tylko na
+      <a href="https://www.twitch.tv/matisioalt" target="_blank" rel="noopener noreferrer">Twitchu: matisioalt</a>.
+    </div>
+
+    <!-- Odtwarzacz Twitch -->
     <div class="stream-player-box">
-      <div class="stream-tabs">
-        <button class="tab-btn active-twitch" onclick="switchStream('twitch')">
-          <span>👾 Twitch Stream</span>
-        </button>
-        <button class="tab-btn" id="yt-tab-btn" onclick="switchStream('youtube')">
-          <span>▶ YouTube Live</span>
-        </button>
-      </div>
-
       <div class="video-container">
-        <!-- Odtwarzacz Twitch -->
-        <div id="twitch-stream" class="tab-content active">
-          <iframe 
-            src="https://player.twitch.tv/?channel=sirmatisio&parent=matisio.pl&autoplay=false" 
-            allowfullscreen>
-          </iframe>
-        </div>
-
-        <!-- Odtwarzacz YouTube -->
-        <div id="youtube-stream" class="tab-content">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UC06g1vHrHC7i29Nnvj9TOxA&autoplay=1" 
-            title="Transmisja na żywo YouTube" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
+        <iframe
+          src="https://player.twitch.tv/?channel=matisioalt&parent=matisio.pl&autoplay=false"
+          title="Transmisja na żywo Twitch — matisioalt"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
 
-    <!-- Sekcja Przycisków (Tipply + Ankieta + Sociale) -->
+    <!-- Sekcja Przycisków (Tipply + Ankieta + Twitch) -->
     <div class="actions-box">
-      <a href="https://tipply.pl/@itsmatisio" target="_blank" class="btn-donate">
+      <a href="https://tipply.pl/@itsmatisio" target="_blank" rel="noopener noreferrer" class="btn-donate">
         💳 Wyślij Donate / Utrudnij Grę
       </a>
 
-      <a href="https://strawpoll.com/bVg8B3MrMyY" target="_blank" class="btn-poll">
+      <a href="https://strawpoll.com/bVg8B3MrMyY" target="_blank" rel="noopener noreferrer" class="btn-poll">
         📊 Zagłosuj w Ankiecie
       </a>
 
       <div class="social-links">
-        <a href="https://www.youtube.com/@matisio/live" target="_blank" class="social-btn btn-youtube">
-          YouTube Live
-        </a>
-        <a href="https://www.twitch.tv/sirmatisio" target="_blank" class="social-btn btn-twitch">
-          Twitch Stream
+        <a href="https://www.twitch.tv/matisioalt" target="_blank" rel="noopener noreferrer" class="social-btn btn-twitch">
+          Twitch Stream — matisioalt
         </a>
       </div>
     </div>
@@ -525,17 +458,17 @@
         <span class="game-title">GTA III</span>
         <span class="game-status">✓ Ukończone</span>
       </div>
-      <div class="progress-item active">
+      <div class="progress-item completed">
         <span class="game-title">GTA Vice City</span>
-        <span class="game-status">▶ TERAZ NA STREAMIE</span>
+        <span class="game-status">✓ Ukończone</span>
       </div>
-      <div class="progress-item">
+      <div class="progress-item completed">
         <span class="game-title">GTA San Andreas</span>
-        <span class="game-status">W kolejce</span>
+        <span class="game-status">✓ Ukończone</span>
       </div>
-      <div class="progress-item">
+      <div class="progress-item active">
         <span class="game-title">GTA IV</span>
-        <span class="game-status">W kolejce</span>
+        <span class="game-status">▶ TERAZ NA STREAMIE</span>
       </div>
       <div class="progress-item">
         <span class="game-title">GTA V</span>
@@ -599,27 +532,6 @@
 
     <div class="footer-hint">Wspieraj kanał i wpływaj na rozgrywkę!</div>
   </div>
-
-  <script>
-    // Przełączanie odtwarzaczy wideo Twitch / YouTube
-    function switchStream(platform) {
-      const twitchStream = document.getElementById('twitch-stream');
-      const youtubeStream = document.getElementById('youtube-stream');
-      const buttons = document.querySelectorAll('.tab-btn');
-
-      buttons.forEach(btn => btn.className = 'tab-btn');
-
-      if (platform === 'twitch') {
-        twitchStream.classList.add('active');
-        youtubeStream.classList.remove('active');
-        buttons[0].classList.add('active-twitch');
-      } else {
-        youtubeStream.classList.add('active');
-        twitchStream.classList.remove('active');
-        buttons[1].classList.add('active-yt');
-      }
-    }
-  </script>
 
 </body>
 </html>
